@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Magali Ramirez — Estratega Visual 360°</title>
+<meta name="description" content="Maquilladora profesional, consultora de imagen y estratega visual en Buenos Aires. Makeup editorial, asesoría de imagen y producciones fotográficas 360°.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f5f0ea;
+    --warm-white: #faf8f5;
+    --black: #0e0c0b;
+    --charcoal: #1c1a18;
+    --gold: #b8975a;
+    --gold-light: #d4b47a;
+    --muted: #8a7f74;
+    --border: rgba(184,151,90,0.25);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--cream);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    padding: 24px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: linear-gradient(to bottom, rgba(14,12,11,0.95) 0%, transparent 100%);
+    backdrop-filter: blur(2px);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex; gap: 40px; list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold) !important;
+    padding: 8px 20px;
+    font-size: 9px !important;
+    letter-spacing: 3px;
+    transition: all 0.3s !important;
+    cursor: pointer;
+  }
+
+  .nav-cta:hover {
+    background: var(--gold) !important;
+    color: var(--black) !important;
+  }
+
+  /* HERO */
+  .hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 80px 48px;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: 
+      linear-gradient(135deg, rgba(14,12,11,0.7) 0%, rgba(14,12,11,0.3) 50%, rgba(14,12,11,0.8) 100%),
+      url('https://static.wixstatic.com/media/b3b923_02fa0ebc7fd8475fb92f86412bc13cd7~mv2.jpg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/b3b923_02fa0ebc7fd8475fb92f86412bc13cd7~mv2.jpg') center/cover no-repeat;
+    transform: scale(1.05);
+    animation: heroZoom 8s ease-out forwards;
+  }
+
+  @keyframes heroZoom {
+    from { transform: scale(1.05); }
+    to { transform: scale(1); }
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 700px;
+    animation: fadeUp 1.2s ease 0.3s both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow {
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(56px, 8vw, 96px);
+    font-weight: 300;
+    line-height: 0.9;
+    margin-bottom: 28px;
+    letter-spacing: -1px;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-desc {
+    font-size: 12px;
+    letter-spacing: 1px;
+    line-height: 2;
+    color: rgba(245,240,234,0.75);
+    max-width: 420px;
+    margin-bottom: 40px;
+  }
+
+  .hero-actions {
+    display: flex; gap: 20px; align-items: center;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--black);
+    text-decoration: none;
+    padding: 14px 36px;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 400;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+    transition: all 0.3s;
+  }
+
+  .btn-ghost:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+  }
+
+  .hero-scroll {
+    position: absolute; bottom: 48px; right: 48px;
+    writing-mode: vertical-rl;
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex; align-items: center; gap: 12px;
+    animation: fadeUp 1.2s ease 0.8s both;
+  }
+
+  .hero-scroll::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 60px;
+    background: var(--gold);
+    animation: scrollLine 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollLine {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.5); transform-origin: top; }
+    50% { opacity: 1; transform: scaleY(1); }
+  }
+
+  /* SECTION BASE */
+  section { padding: 120px 48px; }
+
+  .section-eyebrow {
+    font-size: 9px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 300;
+    line-height: 1.05;
+    margin-bottom: 60px;
+  }
+
+  /* GALLERY STRIP */
+  .gallery-strip {
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .gallery-track {
+    display: flex;
+    gap: 4px;
+    animation: gallerySlide 30s linear infinite;
+    width: max-content;
+  }
+
+  .gallery-track:hover { animation-play-state: paused; }
+
+  @keyframes gallerySlide {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .gallery-img {
+    width: 280px;
+    height: 380px;
+    object-fit: cover;
+    flex-shrink: 0;
+    filter: grayscale(20%);
+    transition: filter 0.4s;
+  }
+
+  .gallery-img:hover { filter: grayscale(0%); }
+
+  /* SERVICES */
+  .services { background: var(--charcoal); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .service-card {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    cursor: pointer;
+  }
+
+  .service-card img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    filter: brightness(0.6);
+  }
+
+  .service-card:hover img {
+    transform: scale(1.06);
+    filter: brightness(0.4);
+  }
+
+  .service-info {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    justify-content: flex-end;
+    padding: 36px;
+    background: linear-gradient(to top, rgba(14,12,11,0.9) 0%, transparent 60%);
+    transition: all 0.4s;
+  }
+
+  .service-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    font-weight: 300;
+    color: rgba(184,151,90,0.15);
+    position: absolute;
+    top: 20px; right: 20px;
+    line-height: 1;
+  }
+
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+
+  .service-desc {
+    font-size: 11px;
+    line-height: 1.8;
+    color: rgba(245,240,234,0.7);
+    margin-bottom: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .service-card:hover .service-desc {
+    max-height: 120px;
+  }
+
+  .service-link {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 400;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 2px;
+    align-self: flex-start;
+  }
+
+  /* ABOUT */
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    padding: 120px 48px;
+  }
+
+  .about-img-wrap {
+    position: relative;
+  }
+
+  .about-img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .about-img-accent {
+    position: absolute;
+    bottom: -20px; right: -20px;
+    width: 60%;
+    aspect-ratio: 1;
+    border: 1px solid var(--gold);
+    z-index: -1;
+  }
+
+  .about-tag {
+    position: absolute;
+    bottom: 30px; left: -30px;
+    background: var(--gold);
+    color: var(--black);
+    padding: 12px 20px;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .about-text p {
+    font-size: 13px;
+    line-height: 2.2;
+    color: rgba(245,240,234,0.8);
+    margin-bottom: 20px;
+  }
+
+  .about-text p strong {
+    color: var(--gold-light);
+    font-weight: 400;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+    padding-top: 48px;
+    border-top: 1px solid var(--border);
+  }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* NOVEDADES / BLOG */
+  .blog { background: var(--charcoal); }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2px;
+  }
+
+  .blog-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .blog-card:first-child { grid-row: span 2; }
+
+  .blog-card img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    min-height: 260px;
+    transition: transform 0.5s ease;
+    filter: brightness(0.65);
+  }
+
+  .blog-card:hover img { transform: scale(1.04); }
+
+  .blog-info {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    justify-content: flex-end;
+    padding: 28px;
+    background: linear-gradient(to top, rgba(14,12,11,0.85) 0%, transparent 70%);
+  }
+
+  .blog-cat {
+    font-size: 8px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+    font-weight: 400;
+  }
+
+  .blog-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .blog-date {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--muted);
+  }
+
+  /* CTA BAND */
+  .cta-band {
+    padding: 100px 48px;
+    text-align: center;
+    background: 
+      linear-gradient(135deg, rgba(184,151,90,0.08) 0%, transparent 60%),
+      var(--black);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .cta-band h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 6vw, 72px);
+    font-weight: 300;
+    margin-bottom: 24px;
+    line-height: 1.1;
+  }
+
+  .cta-band h2 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .cta-band p {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--muted);
+    margin-bottom: 48px;
+    line-height: 2;
+  }
+
+  .cta-buttons {
+    display: flex; gap: 20px; justify-content: center; align-items: center; flex-wrap: wrap;
+  }
+
+  /* WHATSAPP FLOAT */
+  .wa-float {
+    position: fixed;
+    bottom: 32px; right: 32px;
+    width: 56px; height: 56px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    z-index: 200;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .wa-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px rgba(37,211,102,0.5);
+  }
+
+  .wa-float svg { width: 28px; height: 28px; fill: white; }
+
+  /* FOOTER */
+  footer {
+    padding: 60px 48px 40px;
+    background: var(--charcoal);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--gold);
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+  }
+
+  .footer-sub {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  .footer-social {
+    display: flex; gap: 16px;
+  }
+
+  .footer-social a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .footer-social a:hover { color: var(--gold); }
+
+  .footer-links h4 {
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+
+  .footer-links ul { list-style: none; }
+
+  .footer-links li { margin-bottom: 12px; }
+
+  .footer-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+  }
+
+  .footer-links a:hover { color: var(--cream); }
+
+  .footer-contact h4 {
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+
+  .footer-contact p {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  .footer-contact a {
+    color: var(--cream);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-contact a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    padding: 24px 48px;
+    background: var(--charcoal);
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-bottom p {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+  }
+
+  /* HAMBURGER MOBILE */
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 24px; height: 1px; background: var(--cream); transition: all 0.3s; display: block; }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    nav { padding: 20px 24px; }
+    .nav-links { display: none; flex-direction: column; position: fixed; inset: 0; background: var(--black); justify-content: center; align-items: center; gap: 32px; }
+    .nav-links.open { display: flex; }
+    .nav-links a { font-size: 14px; }
+    .hamburger { display: flex; z-index: 101; }
+
+    .hero { padding: 80px 24px 60px; }
+    section { padding: 80px 24px; }
+
+    .services-grid { grid-template-columns: 1fr; }
+    .service-card { aspect-ratio: 4/3; }
+    .service-desc { max-height: 80px; }
+
+    .about { grid-template-columns: 1fr; padding: 80px 24px; gap: 48px; }
+    .about-img-accent, .about-tag { display: none; }
+    .about-stats { grid-template-columns: repeat(3,1fr); }
+
+    .blog-grid { grid-template-columns: 1fr; }
+    .blog-card:first-child { grid-row: auto; }
+    .blog-card img { min-height: 220px; }
+
+    footer { grid-template-columns: 1fr; padding: 48px 24px 32px; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; padding: 20px 24px; }
+
+    .cta-band { padding: 80px 24px; }
+    .hero-scroll { display: none; }
+  }
+
+  /* FADE IN ON SCROLL */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">XARTE DE MAGA</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#novedades">Novedades</a></li>
+    <li><a href="https://wa.me/5491137968029" target="_blank" class="nav-cta">Reservar</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Buenos Aires · Estrategia Visual 360°</p>
+    <h1 class="hero-title">Magali<br><em>Ramirez</em></h1>
+    <p class="hero-desc">Maquilladora profesional, consultora de imagen y estratega visual. Creadora de experiencias visuales que conectan con lo auténtico y lo aspiracional.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5491137968029?text=Hola%20Magali%2C%20quer%C3%ADa%20consultar%20sobre%20tus%20servicios" target="_blank" class="btn-primary">Reservar turno</a>
+      <a href="#servicios" class="btn-ghost">Ver servicios</a>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- GALERÍA AUTOMÁTICA -->
+<div class="gallery-strip">
+  <div class="gallery-track">
+    <img class="gallery-img" src="https://static.wixstatic.com/media/b3b923_ac6ee80c32ec413da775935bbf34f4b7~mv2.jpg/v1/fill/w_960,h_960,fp_0.53_0.33,q_90,enc_avif,quality_auto/b3b923_ac6ee80c32ec413da775935bbf34f4b7~mv2.jpg" alt="Producción">
+    <img class="gallery-img" src="https://static.wixstatic.com/media/b3b923_b4bde0d8b0f945bb95db56b19cc3cb59~mv2.jpg/v1/fill/w_960,h_960,fp_0.57_0.45,q_90,enc_avif,quality_auto/b3b923_b4bde0d8b0f945bb95db56b19cc3cb59~mv2.jpg" alt="Maquillaje">
+    <img class="gallery-img" src="https://static.wixstatic.com/media/b3b923_02fa0ebc7fd8475fb92f86412bc13cd7~mv2.jpg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/b3b923_02fa0ebc7fd8475fb92f86412bc13cd7~mv2.jpg" alt="Editorial">
+    <img class="gallery-img" src="https://static.wixstatic.com/media/b3b923_32f22b68712e470a8dc3427b3d9ecebc~mv2.jpg/v1/fill/w_960,h_960,fp_0.59_0.28,q_90,enc_avif,quality_auto/b3b923_32f22b68712e470a8dc3427b3d9ecebc~mv2.jpg" alt="Styling">
+    <img class="gallery-img" src="https://static.wixstatic.com/media/b3b923_7a5e2787cc88428b9e8afde763e59bd0~mv2.jpg/v1/fill/w_960,h_960,fp_0.58_0.43,q_90,enc_avif,quality_auto/b3b923_7a5e2787cc88428b9e8afde763e59bd0~mv2.jpg" alt="Imagen">
+    <img class="gallery-img" src="https://static.wixstatic.com/media/b3b923_a7b3fa6bde7b4f85b1de3d46f729c670~mv2.jpg/v1/fill/w_960,h_960,fp_0.52_0.33,q_90,enc_avif,quality_auto/b3b923_a7b3fa6bde7b4f85b1de3d46f729c670~mv2.jpg" alt="Moda">
+    <img class="gallery-img" src="https://static.wixstatic.com/media/b3b923_43d295e325514dca8ee93af726593ceb~mv2.jpg/v1/fill/w_960,h_960,fp_0.55_0.2,q_90,enc_avif,quality_auto/b3b923_43d295e325514dca8ee93af726593ceb~mv2.jpg" alt="Arte">
+    <!-- duplicado para loop infinito -->
+    <img class="gallery-img" src="https://static.wixstatic.com/media/b3b923_ac6ee80c32ec413da775935bbf34f4b7~mv2.jpg/v1/fill/w_960,h_960,fp_0.53_0.33,q_90,enc_avif,quality_auto/b3b923_ac6ee80c32ec413da775935bbf34f4b7~mv2.jpg" alt="Producción">
+    <img class="gallery-img" src="https://static.wixstatic.com/media/b3b923_b4bde0d8b0f945bb95db56b19cc3cb59~mv2.jpg/v1/fill/w_960,h_960,fp_0.57_0.45,q_90,enc_avif,quality_auto/b3b923_b4bde0d8b0f945bb95db56b19cc3cb59~mv2.jpg" alt="Maquillaje">
+    <img class="gallery-img" src="https://static.wixstatic.com/media/b3b923_02fa0ebc7fd8475fb92f86412bc13cd7~mv2.jpg/v1/fit/w_960,h_960,q_90,enc_avif,quality_auto/b3b923_02fa0ebc7fd8475fb92f86412bc13cd7~mv2.jpg" alt="Editorial">
+    <img class="gallery-img" src="https://static.wixstatic.com/media/b3b923_32f22b68712e470a8dc3427b3d9ecebc~mv2.jpg/v1/fill/w_960,h_960,fp_0.59_0.28,q_90,enc_avif,quality_auto/b3b923_32f22b68712e470a8dc3427b3d9ecebc~mv2.jpg" alt="Styling">
+    <img class="gallery-img" src="https://static.wixstatic.com/media/b3b923_7a5e2787cc88428b9e8afde763e59bd0~mv2.jpg/v1/fill/w_960,h_960,fp_0.58_0.43,q_90,enc_avif,quality_auto/b3b923_7a5e2787cc88428b9e8afde763e59bd0~mv2.jpg" alt="Imagen">
+    <img class="gallery-img" src="https://static.wixstatic.com/media/b3b923_a7b3fa6bde7b4f85b1de3d46f729c670~mv2.jpg/v1/fill/w_960,h_960,fp_0.52_0.33,q_90,enc_avif,quality_auto/b3b923_a7b3fa6bde7b4f85b1de3d46f729c670~mv2.jpg" alt="Moda">
+    <img class="gallery-img" src="https://static.wixstatic.com/media/b3b923_43d295e325514dca8ee93af726593ceb~mv2.jpg/v1/fill/w_960,h_960,fp_0.55_0.2,q_90,enc_avif,quality_auto/b3b923_43d295e325514dca8ee93af726593ceb~mv2.jpg" alt="Arte">
+  </div>
+</div>
+
+<!-- SERVICIOS -->
+<section class="services" id="servicios">
+  <p class="section-eyebrow reveal">Lo que hago</p>
+  <h2 class="section-title reveal">Mis <em style="font-style:italic; font-family:'Cormorant Garamond',serif;">servicios</em></h2>
+  <div class="services-grid reveal">
+
+    <div class="service-card">
+      <img src="https://static.wixstatic.com/media/b3b923_183eaea125e644f0a5b364b0982d2b03~mv2.jpg" alt="Makeup & Hair">
+      <div class="service-info">
+        <span class="service-num">01</span>
+        <h3 class="service-name">Makeup & Hair</h3>
+        <p class="service-desc">Maquillajes profesionales para eventos, producciones, sociales y artísticos. Maletín con amplia gama de productos de alta calidad. Todos los estilos son personalizados y trabajados especialmente para vos.</p>
+        <a href="https://wa.me/5491137968029?text=Hola%20Magali%2C%20me%20interesa%20el%20servicio%20de%20Makeup%20%26%20Hair" target="_blank" class="service-link">Reservar →</a>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <img src="https://static.wixstatic.com/media/b3b923_570f5d1c82c94b4397f7cca4f2283c39~mv2.jpg" alt="Imagen Consulting">
+      <div class="service-info">
+        <span class="service-num">02</span>
+        <h3 class="service-name">Imagen Consulting</h3>
+        <p class="service-desc">Consultoría de identidad visual para eventos, producciones y marca personal. Usamos tu colorimetría para potenciarte cada día. Una guía completa para que te reinventes con autenticidad y seguridad.</p>
+        <a href="https://wa.me/5491137968029?text=Hola%20Magali%2C%20me%20interesa%20la%20consultor%C3%ADa%20de%20imagen" target="_blank" class="service-link">Reservar →</a>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <img src="https://static.wixstatic.com/media/b3b923_cd7fa910cdab486ca340f58f69a249d8~mv2.jpg" alt="Productions & Posing">
+      <div class="service-info">
+        <span class="service-num">03</span>
+        <h3 class="service-name">Productions & Posing</h3>
+        <p class="service-desc">Estrategia visual 360° para producciones fotográficas en estudio o exteriores. Te guío en poses para destacar tu marca personal. Escenografía conceptual que se fusiona con tu contenido.</p>
+        <a href="https://wa.me/5491137968029?text=Hola%20Magali%2C%20me%20interesa%20el%20servicio%20de%20producciones" target="_blank" class="service-link">Reservar →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SOBRE MÍ -->
+<section id="sobre-mi" style="padding:0;">
+  <div class="about">
+    <div class="about-img-wrap reveal">
+      <img class="about-img" src="https://static.wixstatic.com/media/b3b923_bbbcd72d993442ea86e9e96a76ab15d4~mv2.jpg" alt="Magali Ramirez">
+      <div class="about-img-accent"></div>
+      <div class="about-tag">Estratega Visual · BsAs</div>
+    </div>
+    <div class="about-text reveal">
+      <p class="section-eyebrow">Sobre mí</p>
+      <h2 class="section-title" style="margin-bottom:32px;">La persona<br>detrás del <em style="font-style:italic; font-family:'Cormorant Garamond',serif;">arte</em></h2>
+      <p>Soy <strong>Magali Ramirez</strong>, estratega visual 360°, maquilladora profesional y consultora de branding con foco en moda, belleza y comunicación visual. Mi trabajo nace de la convicción de que la imagen es un lenguaje poderoso.</p>
+      <p>Desarrollo mi marca bajo los conceptos <strong>"Camaleónica"</strong> y <strong>"Xarte de Maga"</strong> — una fusión de arte, estética y estrategia que se adapta a cada cliente. Actualmente cursando el <strong>Máster en Comunicación de Moda y Belleza con Vogue</strong>, integrando el rigor académico a cada proyecto.</p>
+      <p>Con estudio propio en Buenos Aires y equipo completo de producción audiovisual, creo experiencias visuales auténticas que conectan con lo humano y lo aspiracional.</p>
+      <div class="about-stats">
+        <div>
+          <div class="stat-num">360°</div>
+          <div class="stat-label">Visión integral</div>
+        </div>
+        <div>
+          <div class="stat-num">3</div>
+          <div class="stat-label">Servicios clave</div>
+        </div>
+        <div>
+          <div class="stat-num">BsAs</div>
+          <div class="stat-label">Base & estudio</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOVEDADES / BLOG -->
+<section class="blog" id="novedades">
+  <p class="section-eyebrow reveal">Blog & actualizaciones</p>
+  <h2 class="section-title reveal">Novedades</h2>
+  <div class="blog-grid reveal">
+
+    <div class="blog-card">
+      <img src="https://static.wixstatic.com/media/b3b923_a7b3fa6bde7b4f85b1de3d46f729c670~mv2.jpg" alt="Novedad principal">
+      <div class="blog-info">
+        <span class="blog-cat">Master · Vogue</span>
+        <h3 class="blog-title">Cursando el Máster en Comunicación de Moda y Belleza con Vogue</h3>
+        <span class="blog-date">2025</span>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <img src="https://static.wixstatic.com/media/b3b923_43d295e325514dca8ee93af726593ceb~mv2.jpg" alt="Patrón Chita">
+      <div class="blog-info">
+        <span class="blog-cat">Marca Propia</span>
+        <h3 class="blog-title">Patrón Chita — indumentaria artesanal animal print</h3>
+        <span class="blog-date">Próximamente</span>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <img src="https://static.wixstatic.com/media/b3b923_32f22b68712e470a8dc3427b3d9ecebc~mv2.jpg" alt="Producción cinematográfica">
+      <div class="blog-info">
+        <span class="blog-cat">Producción</span>
+        <h3 class="blog-title">Producciones audiovisuales cinematográficas propias</h3>
+        <span class="blog-date">En desarrollo</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <h2 class="reveal">¿Creamos algo<br><em>juntas?</em></h2>
+  <p class="reveal">Escribime por WhatsApp o seguime en Instagram para ver los últimos trabajos.</p>
+  <div class="cta-buttons reveal">
+    <a href="https://wa.me/5491137968029?text=Hola%20Magali%2C%20quer%C3%ADa%20consultar%20sobre%20tus%20servicios" target="_blank" class="btn-primary">
+      WhatsApp
+    </a>
+    <a href="https://instagram.com/xartedemaga" target="_blank" class="btn-ghost">@xartedemaga</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">XARTE DE MAGA</div>
+    <div class="footer-sub">Estrategia Visual 360° · Buenos Aires</div>
+    <div class="footer-social">
+      <a href="https://instagram.com/xartedemaga" target="_blank">Instagram</a>
+      <a href="https://wa.me/5491137968029" target="_blank">WhatsApp</a>
+    </div>
+  </div>
+  <div class="footer-links">
+    <h4>Navegación</h4>
+    <ul>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#novedades">Novedades</a></li>
+    </ul>
+  </div>
+  <div class="footer-contact">
+    <h4>Contacto</h4>
+    <p>
+      Buenos Aires, Argentina<br>
+      <a href="https://wa.me/5491137968029">+54 9 11 3796-8029</a><br>
+      <a href="https://instagram.com/xartedemaga">@xartedemaga</a>
+    </p>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <p>© 2025 Magali Ramirez — Xarte de Maga</p>
+  <p>Buenos Aires, Argentina</p>
+</div>
+
+<!-- WHATSAPP FLOTANTE -->
+<a class="wa-float" href="https://wa.me/5491137968029?text=Hola%20Magali%2C%20quer%C3%ADa%20consultar%20sobre%20tus%20servicios" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+  // Menú hamburguesa
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Nav blur on scroll
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 80) {
+      nav.style.background = 'rgba(14,12,11,0.97)';
+    } else {
+      nav.style.background = 'linear-gradient(to bottom, rgba(14,12,11,0.95) 0%, transparent 100%)';
+    }
+  });
+</script>
+</body>
+</html>
